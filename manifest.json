@@ -1,0 +1,16 @@
+{
+  "name": "Pacman App",
+  "short_name": "Pacman App",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "description": "A simple Pacman game built with HTML, CSS, and JavaScript.",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "assets/ghost.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ]
+}
