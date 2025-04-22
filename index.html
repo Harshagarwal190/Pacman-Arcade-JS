@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacman</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pacman</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: black;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px; /* ⬅️ Top/bottom and side spacing */
+    }
+
+    #canvas {
+      width: 800px;
+      height: 800px;
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 6px solid;
+      border-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red) 1;
+      animation: rainbow-border 5s linear infinite;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+      background-color: black; /* Safe fallback */
+    }
+
+    @keyframes rainbow-border {
+      0% {
+        border-image-source: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet, red);
+      }
+      100% {
+        border-image-source: linear-gradient(405deg, red, orange, yellow, green, cyan, blue, violet, red);
+      }
+    }
+
+    .hidden-assets {
+      display: none;
+    }
+  </style>
 </head>
-<body style="margin: 0px; background-color:black; overflow-y: hidden; overflow-x: hidden;">
-    <canvas id="canvas" width="500" height="500"></canvas>
-    <div style="display: none">
-        <!-- <img  id ="animations"src="" alt=""> -->
-        <img  id ="ghosts" src="assets/ghost.png" alt="">
-        <img  id ="animations" src="assets/animations.gif" alt="">
-    </div>
-    <script src="ghost.js"></script>
-    <script src="pacman.js"></script>
-    <script src="game.js"></script>
+
+<body>
+  <!-- Game Canvas -->
+  <canvas id="canvas" width="420" height="490"></canvas>
+
+  <!-- Hidden Game Assets -->
+  <div class="hidden-assets">
+    <img id="ghosts" src="assets/ghost.png" alt="Ghosts" />
+    <img id="animations" src="assets/animations.gif" alt="Animations" />
+  </div>
+
+  <!-- Game Logic Scripts -->
+  <script src="ghost.js"></script>
+  <script src="pacman.js"></script>
+  <script src="game.js"></script>
 </body>
 </html>
-
-
